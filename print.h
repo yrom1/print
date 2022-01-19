@@ -25,6 +25,10 @@ void printHead(const T& item) {
   printItem(item);
 }
 
+void printHead(const std::string& item) {
+  printItem(item);
+}
+
 template <std::ranges::range T>
 void printHead(const T& container) {
   std::cout << '[';
