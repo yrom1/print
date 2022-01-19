@@ -1,6 +1,7 @@
-# printplusplus
-print() // in progress
+# print
+Python style `print` for C++
 
+# Usage
 ```cpp
   print(std::list<std::string>{"app le", "banana", "pineapple"});
   print(std::vector<int>{1, 2, 3});
