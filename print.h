@@ -3,20 +3,32 @@
 
 #include <iostream>
 #include <string>
+#include <ranges>
 
-// TODO(yrom1): overload print using concepts
-#define Container typename
-#define Single typename
+
+// start printItem
+
+void printItem(const std::string& str) { std::cout << "'" << str << "'"; }
+
+void printItem(const char& c) { std::cout << "'" << c << "'"; }
 
 template <typename T>
 void printItem(const T& item) {
   std::cout << item;
 }
 
-void printItem(const std::string& str) { std::cout << "'" << str << "'"; }
+// end printItem
 
-template <Container T>
-void prints(const T& container) {
+
+// start printHead
+
+template <typename T>
+void printHead(const T& item) {
+  printItem(item);
+}
+
+template <std::ranges::range T>
+void printHead(const T& container) {
   std::cout << '[';
   typename T::size_type idx = 0;
   for (const auto& elem : container) {
@@ -27,13 +39,22 @@ void prints(const T& container) {
     }
   }
   std::cout << ']';
-  std::cout << '\n';
 }
 
-template <Single T>
-void print(const T& item) {
-  printItem(item);
-  std::cout << '\n';
+// end printHead
+
+
+// start print
+
+void print() { std::cout << '\n'; }
+
+template <typename T, typename... TAIL>
+void print(const T &head, TAIL... tail) {
+  printHead(head);
+  print(tail...);
 }
+
+// end print
+
 
 #endif  // PRINT_H_
