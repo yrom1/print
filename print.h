@@ -7,7 +7,7 @@
 
 // start printItem
 
-void printItem(const std::string& str) { std::cout << "'" << str << "'"; }
+void printItem(const std::string& str) { std::cout << "\"" << str << "\""; }
 
 void printItem(const char& c) { std::cout << "'" << c << "'"; }
 

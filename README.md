@@ -10,9 +10,9 @@ print('a');
 ```
 
 ```
-['app le', 'banana', 'pineapple']
+["app le", "banana", "pineapple"]
 [1, 2, 3]
-'dog'
+"dog"
 1
 'a'
 ```
