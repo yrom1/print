@@ -2,9 +2,8 @@
 #define PRINT_H_
 
 #include <iostream>
-#include <string>
 #include <ranges>
-
+#include <string>
 
 // start printItem
 
@@ -18,7 +17,6 @@ void printItem(const T& item) {
 }
 
 // end printItem
-
 
 // start printHead
 
@@ -43,18 +41,16 @@ void printHead(const T& container) {
 
 // end printHead
 
-
 // start print
 
 void print() { std::cout << '\n'; }
 
 template <typename T, typename... TAIL>
-void print(const T &head, TAIL... tail) {
+void print(const T& head, TAIL... tail) {
   printHead(head);
   print(tail...);
 }
 
 // end print
-
 
 #endif  // PRINT_H_
