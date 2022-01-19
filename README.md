@@ -2,11 +2,14 @@
 print() // in progress
 
 ```cpp
-print(std::list<std::string>{"app le", "banana", "pineapple"});
-print(std::vector<int>{1, 2, 3});
-print(std::string{"dog"});
-print(1);
-print('a');
+  print(std::list<std::string>{"app le", "banana", "pineapple"});
+  print(std::vector<int>{1, 2, 3});
+  print(std::string{"dog"});
+  // TODO(yrom1): C strings print("dog");
+  print(1);
+  print('a');
+  std::vector<int> v = {42, 42, 42};
+  print(v, std::vector<int>{1, 2, 3}); // accepts variadic arguments
 ```
 
 ```
@@ -15,4 +18,5 @@ print('a');
 "dog"
 1
 'a'
+[42, 42, 42] [1, 2, 3]
 ```

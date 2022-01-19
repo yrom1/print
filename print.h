@@ -52,6 +52,7 @@ void print() { std::cout << '\n'; }
 template <typename T, typename... TAIL>
 void print(const T& head, TAIL... tail) {
   printHead(head);
+  std::cout << ' ';
   print(tail...);
 }
 
