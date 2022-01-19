@@ -20,9 +20,9 @@ void printItem(const T& item) {
 
 // start printHead
 
-template <typename T>
-void printHead(const T& item) {
-  printItem(item);
+void printHead(const char* item) {
+  std::string str{item};
+  printItem(str);
 }
 
 void printHead(const std::string& item) {
@@ -41,6 +41,11 @@ void printHead(const T& container) {
     }
   }
   std::cout << ']';
+}
+
+template <typename T>
+void printHead(const T& item) {
+  printItem(item);
 }
 
 // end printHead
