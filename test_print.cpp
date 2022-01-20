@@ -13,5 +13,8 @@ int main() {
   print('a');
   std::vector<std::string> v = {"variadic"};
   print(v, std::vector<std::string>{"arguments", "!"});
-  print(std::vector<std::vector<std::vector<std::string>>>{{{std::string("and")}},{{std::string("very")}}, {{std::string("nested")}}});
+  print(std::vector<std::vector<std::vector<std::string>>>{
+      {{std::string("and")}},
+      {{std::string("very")}},
+      {{std::string("nested")}}});
 }
