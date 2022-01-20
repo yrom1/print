@@ -55,8 +55,8 @@ void printHead(const T& container) {
 
 void print() { std::cout << '\n'; }
 
-template <typename T, typename... TAIL>
-void print(const T& head, TAIL... tail) {
+template <typename HEAD, typename... TAIL>
+void print(const HEAD& head, TAIL... tail) {
   printHead(head);
   std::cout << ' ';
   print(tail...);
