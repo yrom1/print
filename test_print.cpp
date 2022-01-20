@@ -13,4 +13,5 @@ int main() {
   print('a');
   std::vector<int> v = {42, 42, 42};
   print(v, std::vector<int>{1, 2, 3});
+  print(std::vector<std::vector<std::string>>{std::vector{std::string("nested")}});
 }

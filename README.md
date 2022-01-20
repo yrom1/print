@@ -3,14 +3,15 @@ Python style `print` for C++
 
 # Usage
 ```cpp
-  print(std::list<std::string>{"app le", "banana", "pineapple"});
-  print(std::vector<int>{1, 2, 3});
-  print(std::string{"dog"});
-  print("c string");
-  print(1);
-  print('a');
-  std::vector<int> v = {42, 42, 42};
-  print(v, std::vector<int>{1, 2, 3}); // accepts variadic arguments
+print(std::list<std::string>{"app le", "banana", "pineapple"});
+print(std::vector<int>{1, 2, 3});
+print(std::string{"dog"});
+print("c string");
+print(1);
+print('a');
+std::vector<int> v = {42, 42, 42};
+print(v, std::vector<int>{1, 2, 3}); // accepts variadic arguments
+print(std::vector<std::vector<std::string>>{std::vector{std::string("nested")}});
 ```
 
 ```
@@ -21,4 +22,5 @@ Python style `print` for C++
 1
 'a'
 [42, 42, 42] [1, 2, 3]
+[["nested"]]
 ```

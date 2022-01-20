@@ -29,23 +29,24 @@ void printHead(const std::string& item) {
   printItem(item);
 }
 
+template <typename T>
+void printHead(const T& item) {
+  printItem(item);
+}
+
 template <std::ranges::range T>
 void printHead(const T& container) {
   std::cout << '[';
   typename T::size_type idx = 0;
   for (const auto& elem : container) {
     ++idx;
-    printItem(elem);
+    printHead(elem);
+    // printItem(elem);
     if (idx != container.size()) {
       std::cout << ", ";
     }
   }
   std::cout << ']';
-}
-
-template <typename T>
-void printHead(const T& item) {
-  printItem(item);
 }
 
 // end printHead
