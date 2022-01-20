@@ -5,6 +5,11 @@
 #include <ranges>
 #include <string>
 
+template<typename T>
+concept Printable = requires(T t) {
+  { std::cout << t } -> std::same_as<std::ostream&>;
+};
+
 // start printItem
 
 void printItem(const std::string& str) { std::cout << "\"" << str << "\""; }
@@ -29,7 +34,7 @@ void printHead(const std::string& item) {
   printItem(item);
 }
 
-template <typename T>
+template <Printable T>
 void printHead(const T& item) {
   printItem(item);
 }
