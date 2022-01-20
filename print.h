@@ -16,7 +16,7 @@ void printItem(const std::string& str) { std::cout << "\"" << str << "\""; }
 
 void printItem(const char& c) { std::cout << "'" << c << "'"; }
 
-template <typename T>
+template <Printable T>
 void printItem(const T& item) {
   std::cout << item;
 }
