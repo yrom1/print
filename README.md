@@ -37,4 +37,4 @@ int main() {
 ["variadic"] ["arguments", "!"] 
 [[["and"]], [["very"]], [["nested"]]] 
 ```
-`prn` and `pr` are references to the print functions in the [Arc](http://www.arclanguage.org/tut.txt) programming language, which do or do not print a newline ('\n') at the end respectively.
+`prn` and `pr` are references to the print functions in the [Arc](http://www.arclanguage.org/tut.txt) programming language, which do or do not print a newline (`'\n'`) at the end respectively.
