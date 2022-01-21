@@ -5,6 +5,8 @@
 #include <ranges>
 #include <string>
 
+namespace pr {
+
 template<typename T>
 concept Printable = requires(T t) {
   { std::cout << t } -> std::same_as<std::ostream&>;
@@ -56,17 +58,19 @@ void printHead(const T& container) {
 
 // end printHead
 
-// start print
+// start pr
 
-void print() { std::cout << '\n'; }
+void pr() { std::cout << '\n'; }
 
 template <typename HEAD, typename... TAIL>
-void print(const HEAD& head, TAIL... tail) {
+void pr(const HEAD& head, TAIL... tail) {
   printHead(head);
   std::cout << ' ';
-  print(tail...);
+  pr(tail...);
 }
 
-// end print
+// end pr
+
+} // namespace pr
 
 #endif  // PRINT_H_

@@ -2,18 +2,18 @@
 #include <string>
 #include <vector>
 
-#include "print.h"
+#include "pr.h"
 
 int main() {
-  print(std::list<std::string>{"app le", "banana", "pineapple"});
-  print(std::vector<int>{1, 2, 3});
-  print(std::string{"dog"});
-  print("c string");
-  print(1);
-  print('a');
+  pr::pr(std::list<std::string>{"app le", "banana", "pineapple"});
+  pr::pr(std::vector<int>{1, 2, 3});
+  pr::pr(std::string{"dog"});
+  pr::pr("c string");
+  pr::pr(1);
+  pr::pr('a');
   std::vector<std::string> v = {"variadic"};
-  print(v, std::vector<std::string>{"arguments", "!"});
-  print(std::vector<std::vector<std::vector<std::string>>>{
+  pr::pr(v, std::vector<std::string>{"arguments", "!"});
+  pr::pr(std::vector<std::vector<std::vector<std::string>>>{
       {{std::string("and")}},
       {{std::string("very")}},
       {{std::string("nested")}}});
