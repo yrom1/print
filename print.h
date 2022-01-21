@@ -5,7 +5,9 @@
 #include <ranges>
 #include <string>
 
-namespace pr {
+namespace print {
+
+namespace __detail {
 
 template<typename T>
 concept Printable = requires(T t) {
@@ -58,18 +60,34 @@ void printHead(const T& container) {
 
 // end printHead
 
+} // namespace __detail
+
 // start pr
 
-void pr() { std::cout << '\n'; }
+void pr() {}
 
 template <typename HEAD, typename... TAIL>
 void pr(const HEAD& head, TAIL... tail) {
-  printHead(head);
+  __detail::printHead(head);
   std::cout << ' ';
   pr(tail...);
 }
 
 // end pr
+
+// start prn
+
+void prn() { std::cout << '\n'; }
+
+template <typename HEAD, typename... TAIL>
+void prn(const HEAD& head, TAIL... tail) {
+  __detail::printHead(head);
+  std::cout << ' ';
+  prn(tail...);
+}
+
+// end prn
+
 
 } // namespace pr
 
