@@ -43,6 +43,16 @@ void printHead(const T& item) {
   printItem(item);
 }
 
+template <Printable T, Printable U>
+void printHead(const std::pair<T, U>& item) {
+  // TODO(yrom1): T or U could be a container
+  std::cout << "(";
+  printItem(item.first);
+  std::cout << ", ";
+  printItem(item.second);
+  std::cout << ")";
+}
+
 template <std::ranges::range T>
 void printHead(const T& container) {
   std::cout << '[';
